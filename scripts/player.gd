@@ -32,10 +32,12 @@ func _process(delta):
 	if Input.is_key_pressed(KEY_SPACE) and can_shot:
 		var stage_node = get_parent()
 		
-		var shot_instance1 = shot_scene.instance()
-		var shot_instance2 = shot_scene.instance()
-		shot_instance1.position = Vector2(position.x + 9,position.y - 5)
-		shot_instance2.position = Vector2(position.x + 9,position.y + 5)
+		var shot_instance1 = shot_scene.instantiate()
+		var shot_instance2 = shot_scene.instantiate()
+		shot_instance1.position = Vector2(position.x + 16,position.y - 5)
+		shot_instance1.DIRECTION = Vector2.RIGHT
+		shot_instance2.position = Vector2(position.x + 16,position.y + 5)
+		shot_instance2.DIRECTION = Vector2.RIGHT
 		stage_node.add_child(shot_instance1)
 		stage_node.add_child(shot_instance2)
 		can_shot = false
@@ -66,10 +68,10 @@ func _on_reload_timer_timeout():
 
 
 func _on_player_area_entered(area):
-	if area.is_in_group("asteroid"):
+	if area.is_in_group("asteroid") or area.is_in_group("shot"):
 		var stage_node = get_parent()
 		
-		var explosion_instance = explosion_scene.instance()
+		var explosion_instance = explosion_scene.instantiate()
 		explosion_instance.position = position
 		stage_node.add_child(explosion_instance)
 		emit_signal("destroyed")

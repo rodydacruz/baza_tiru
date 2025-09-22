@@ -1,0 +1,73 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1758560347
+default_env.tres::Environment::3999820639630935000::1758559960::0::1::::<><><>0<>0<><>::
+icon.png::CompressedTexture2D/CompressedTexture2D::6970643651088141457::1753025361::1753025418::1::::<><><>0<>0<>b203b26c0d8cbe0dbd57d104e0491c64<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
+README.md::TextFile/TextFile::-1::1753025361::0::1::::<><><>0<>0<><>::
+::res://fonts/::1753025418
+hour5.ttf::FontFile/FontFile::5584759533748411237::1753025361::1753025418::1::::<><><>0<>0<>522f35fbe5d431d4904b9f62161c3df0<>res://.godot/imported/hour5.ttf-b58079173cf1aa37a4c504223c9f1e6d.fontdata::
+::res://scenes/::1758559960
+asteroid.tscn::PackedScene/PackedScene::-1::1753025398::0::1::::<><><>0<>0<><>::res://sprites/asteroid2.png<>res://sprites/asteroid1.png<>res://scripts/asteroid.gd
+explosion.tscn::PackedScene/PackedScene::-1::1753025398::0::1::::<><><>0<>0<><>::res://scripts/explosion.gd<>res://sprites/explosion.png
+game.tscn::PackedScene::1187754558116163579::1757443035::0::1::::<><><>0<>0<><>::
+low_nemy.tscn::PackedScene::867285827884176605::1758559774::0::1::::<><><>0<>0<><>::uid://b7275x1laxw6o::::res://scripts/lowney.gd<>uid://d1rmdsly5qkk::::res://sprites/low_nemy.png
+player.tscn::PackedScene::3267438225187743370::1758556248::0::1::::<><><>0<>0<><>::uid://e8w1opeft7uv::::res://sprites/player1.png<>uid://dptqpg2wdjhin::::res://sprites/player2.png<>uid://cerqnxt83c114::::res://scripts/player.gd
+shot.tscn::PackedScene::7592772526969172082::1757443035::0::1::::<><><>0<>0<><>::uid://cnti771fxns53::::res://sprites/shot1.png<>uid://c51sqchhif620::::res://sprites/shot2.png<>uid://bqye4pll81nyc::::res://scripts/shot.gd
+stage.tscn::PackedScene::8159618875617538303::1758559960::0::1::::<><><>0<>0<><>::uid://bms1h3dnm0qog::::res://scenes/player.tscn<>uid://c2ufjfev2s4kl::::res://sprites/background.png<>uid://cltkf5wjsi878::::res://fonts/hour5.ttf<>uid://c3sqbp0fxkbkw::::res://scripts/stage.gd<>res://scenes/asteroid.tscn<>uid://bcn57ok6jfwpe::::res://scripts/background.gd
+::res://scripts/::1758559927
+asteroid.gd::GDScript::5893885272809849018::1758559258::0::1::::<>Area2D<><>0<>0<><>::
+background.gd::GDScript/GDScript::2555514689155587314::1753025398::0::1::::<>Sprite2D<><>0<>0<><>::
+explosion.gd::GDScript/GDScript::272167852292706994::1753025398::0::1::::<>Sprite2D<><>0<>0<><>::
+lowney.gd::GDScript::4690199645758113308::1758559927::0::1::::<>Node2D<><>0<>0<><>::
+player.gd::GDScript::5089687089887608105::1757444114::0::1::::<>Area2D<><>0<>0<><>::
+shot.gd::GDScript::3559282709381388902::1758559561::0::1::::<>Area2D<><>0<>0<><>::
+stage.gd::GDScript::6776261873231023118::1758559419::0::1::::<>Node2D<><>0<>0<><>::
+::res://sprites/::1758554350
+asteroid1.png::CompressedTexture2D/CompressedTexture2D::4777582200333331301::1753025361::1753025418::1::::<><><>0<>0<>b812428a441a286519c8546d8cdd67ec<>res://.godot/imported/asteroid1.png-afaaad3beda9afcaac34dbadafce1db2.ctex::
+asteroid2.png::CompressedTexture2D/CompressedTexture2D::7438368270024500794::1753025361::1753025418::1::::<><><>0<>0<>7898ec6a0052490a8f978273c614aefb<>res://.godot/imported/asteroid2.png-d2a1420f0f8768459264491fe5b450a4.ctex::
+background.png::CompressedTexture2D/CompressedTexture2D::6709547627590183091::1753025361::1753025418::1::::<><><>0<>0<>b7d1f18069c608d5cc71ca3cd07fb939<>res://.godot/imported/background.png-0cfaafa94fbfb5267bc500b34e5eeb6d.ctex::
+explosion.png::CompressedTexture2D/CompressedTexture2D::5987818562624366729::1753025361::1753025418::1::::<><><>0<>0<>dbe9b6d693c34dcd69b2701029bc64ef<>res://.godot/imported/explosion.png-dd7434c2b7b548e19d49e62996eee12b.ctex::
+low_nemy.png::CompressedTexture2D::265294156833129582::1757445032::1757445053::1::::<><><>0<>0<>69ab390df11f97fa50765ebfdff53934<>res://.godot/imported/low_nemy.png-e88de3ede9acea2b660b1a716fbb8d5a.ctex::
+nya (1).jpg::CompressedTexture2D::1019872130519034075::1757594149::1758554350::1::::<><><>0<>0<>7a2602b7e09af757321fb085acde0b28<>res://.godot/imported/nya (1).jpg-8143f927c1c01255067e88a0b1986470.ctex::
+nya.jpg::CompressedTexture2D::7126712233951476501::1757593268::1758554350::1::::<><><>0<>0<>6ec007ea3443154accfde94ecaf26cc9<>res://.godot/imported/nya.jpg-f8952107a0ec25d659950e4e6c965b52.ctex::
+player1.png::CompressedTexture2D/CompressedTexture2D::350262803606667749::1753025361::1753025418::1::::<><><>0<>0<>af0c469a53efcce4b79ba626e846fe9d<>res://.godot/imported/player1.png-71dfadcd4bc002f2f9e1f99076e8426b.ctex::
+player2.png::CompressedTexture2D/CompressedTexture2D::8252316499623532081::1753025361::1753025418::1::::<><><>0<>0<>95b38c5177e9d6611143d2d1c63f9412<>res://.godot/imported/player2.png-b7f34f12b6c9c2f758cab06416dd0cd9.ctex::
+riding a dragon.jpg::CompressedTexture2D::5328939650505384980::1757593258::1758554350::1::::<><><>0<>0<>ec0c91934f7f2ee86bc324c9c52adb32<>res://.godot/imported/riding a dragon.jpg-6cc9eae98ad68a4ec548553cd4592ed6.ctex::
+shot1.png::CompressedTexture2D/CompressedTexture2D::5725064114525412312::1753025361::1753025418::1::::<><><>0<>0<>62665fdbd97df246f65318e44ebf8b71<>res://.godot/imported/shot1.png-83655db773fe01d6afd7e5c4f487e670.ctex::
+shot2.png::CompressedTexture2D/CompressedTexture2D::6933302092894305651::1753025361::1753025418::1::::<><><>0<>0<>34e34877bdf5aaad29143ff68e579612<>res://.godot/imported/shot2.png-cbd7ead715e77ca20ac6ba9543233580.ctex::
+::res://sprites/Declaração de conformidade do produto/::1757871550
+[Content_Types].xml::TextFile::-1::315536400::0::1::::<><><>0<>0<><>::
+::res://sprites/Declaração de conformidade do produto/_rels/::1757871550
+::res://sprites/Declaração de conformidade do produto/customXml/::1757871550
+item1.xml::TextFile::-1::315536400::0::1::::<><><>0<>0<><>::
+itemProps1.xml::TextFile::-1::315536400::0::1::::<><><>0<>0<><>::
+::res://sprites/Declaração de conformidade do produto/customXml/_rels/::1757871550
+::res://sprites/Declaração de conformidade do produto/docProps/::1757871550
+app.xml::TextFile::-1::315536400::0::1::::<><><>0<>0<><>::
+core.xml::TextFile::-1::315536400::0::1::::<><><>0<>0<><>::
+::res://sprites/Declaração de conformidade do produto/word/::1757871550
+document.xml::TextFile::-1::315536400::0::1::::<><><>0<>0<><>::
+endnotes.xml::TextFile::-1::315536400::0::1::::<><><>0<>0<><>::
+fontTable.xml::TextFile::-1::315536400::0::1::::<><><>0<>0<><>::
+footer1.xml::TextFile::-1::315536400::0::1::::<><><>0<>0<><>::
+footer2.xml::TextFile::-1::315536400::0::1::::<><><>0<>0<><>::
+footnotes.xml::TextFile::-1::315536400::0::1::::<><><>0<>0<><>::
+header1.xml::TextFile::-1::315536400::0::1::::<><><>0<>0<><>::
+header2.xml::TextFile::-1::315536400::0::1::::<><><>0<>0<><>::
+numbering.xml::TextFile::-1::315536400::0::1::::<><><>0<>0<><>::
+settings.xml::TextFile::-1::315536400::0::1::::<><><>0<>0<><>::
+styles.xml::TextFile::-1::315536400::0::1::::<><><>0<>0<><>::
+webSettings.xml::TextFile::-1::315536400::0::1::::<><><>0<>0<><>::
+::res://sprites/Declaração de conformidade do produto/word/_rels/::1757871550
+::res://sprites/Declaração de conformidade do produto/word/glossary/::1757871550
+document.xml::TextFile::-1::315536400::0::1::::<><><>0<>0<><>::
+fontTable.xml::TextFile::-1::315536400::0::1::::<><><>0<>0<><>::
+settings.xml::TextFile::-1::315536400::0::1::::<><><>0<>0<><>::
+styles.xml::TextFile::-1::315536400::0::1::::<><><>0<>0<><>::
+webSettings.xml::TextFile::-1::315536400::0::1::::<><><>0<>0<><>::
+::res://sprites/Declaração de conformidade do produto/word/glossary/_rels/::1757871550
+::res://sprites/Declaração de conformidade do produto/word/media/::1758554350
+image1.png::CompressedTexture2D::5652142719269738306::315536400::1758554350::1::::<><><>0<>0<>f278adc59866fb43e28ff8482ce275c3<>res://.godot/imported/image1.png-402dabe2dd85bfd454669c1cbcb806c1.ctex::
+image2.jpeg::CompressedTexture2D::8088039953801358703::315536400::1758554350::1::::<><><>0<>0<>81b4edba939356195e45b47b98747b48<>res://.godot/imported/image2.jpeg-ce7e6bd6cd221110ee6be470e777499d.ctex::
+image3.jpeg::CompressedTexture2D::1325724550602409454::315536400::1758554350::1::::<><><>0<>0<>340b67baefedd27a0c759f15c5191ceb<>res://.godot/imported/image3.jpeg-12634f3d5c262ac1492e045df6d2c32b.ctex::
+::res://sprites/Declaração de conformidade do produto/word/theme/::1757871550
+theme1.xml::TextFile::-1::315536400::0::1::::<><><>0<>0<><>::

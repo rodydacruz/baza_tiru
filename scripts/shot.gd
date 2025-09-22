@@ -1,13 +1,18 @@
 extends Area2D
+
+
+
 const SCREEN_WIDTH = 320
-const MOVE_SPEED = 500.0
+@export var MOVE_SPEED := 500
+var DIRECTION := Vector2.ZERO
+
 func _process(delta):
-	position += Vector2(MOVE_SPEED * delta, 0.0)
-	if position.x >= SCREEN_WIDTH + 8:
+	position += DIRECTION * MOVE_SPEED * delta
+	if position.x < -8 or position.x > SCREEN_WIDTH + 8 :   
 		queue_free()
 
 
 func _on_shot_area_entered(area):
-	if area.is_in_group("asteroid"):
+	if area.is_in_group("asteroid") or area.is_in_group("low_nemy"):
 		queue_free()
 		
