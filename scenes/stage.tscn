@@ -1,37 +1,46 @@
-[gd_scene load_steps=8 format=3 uid="uid://doity30ioxk84"]
+[gd_scene format=3 uid="uid://doity30ioxk84"]
 
 [ext_resource type="PackedScene" uid="uid://bms1h3dnm0qog" path="res://scenes/player.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://c2ufjfev2s4kl" path="res://sprites/background.png" id="2"]
 [ext_resource type="FontFile" uid="uid://cltkf5wjsi878" path="res://fonts/hour5.ttf" id="3"]
 [ext_resource type="Script" uid="uid://c3sqbp0fxkbkw" path="res://scripts/stage.gd" id="4"]
-[ext_resource type="PackedScene" path="res://scenes/asteroid.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://c1lxm0e1b1t61" path="res://scenes/asteroid.tscn" id="5"]
 [ext_resource type="Script" uid="uid://bcn57ok6jfwpe" path="res://scripts/background.gd" id="6"]
 
 [sub_resource type="FontFile" id="1"]
 fallbacks = Array[Font]([ExtResource("3")])
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
 cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 
-[node name="stage" type="Node2D"]
+[node name="stage" type="Node2D" unique_id=907778139]
 script = ExtResource("4")
 
-[node name="spawn_timer" type="Timer" parent="."]
+[node name="spawn_timer" type="Timer" parent="." unique_id=127000216]
 autostart = true
 
-[node name="background" type="Sprite2D" parent="."]
+[node name="background" type="Sprite2D" parent="." unique_id=277022543]
 texture = ExtResource("2")
 centered = false
 script = ExtResource("6")
 
-[node name="player" parent="." instance=ExtResource("1")]
+[node name="player" parent="." unique_id=329197942 instance=ExtResource("1")]
 position = Vector2(49.0815, 88.2523)
 
-[node name="ui" type="CanvasLayer" parent="."]
+[node name="ui" type="CanvasLayer" parent="." unique_id=1399725597]
 
-[node name="score" type="Label" parent="ui"]
+[node name="score" type="Label" parent="ui" unique_id=1860089379]
 offset_left = 19.3246
 offset_top = 6.24334
 offset_right = 59.3246
@@ -42,7 +51,7 @@ theme_override_fonts/font = SubResource("1")
 text = "score:"
 uppercase = true
 
-[node name="retry" type="Label" parent="ui"]
+[node name="retry" type="Label" parent="ui" unique_id=892971319]
 visible = false
 offset_left = 76.0947
 offset_top = 85.1496
@@ -55,7 +64,7 @@ text = "bu panha mou - da enter po bai di novu"
 horizontal_alignment = 1
 uppercase = true
 
-[node name="asteroid" parent="." instance=ExtResource("5")]
+[node name="asteroid" parent="." unique_id=1492032663 instance=ExtResource("5")]
 position = Vector2(304.795, 29.928)
 
 [connection signal="timeout" from="spawn_timer" to="." method="_on_spawn_timer_timeout"]

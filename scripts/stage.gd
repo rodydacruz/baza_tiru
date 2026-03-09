@@ -2,7 +2,9 @@ extends Node2D
 
 
 var is_game_over = false
+var events = 0
 var asteroid = preload("res://scenes/asteroid.tscn")
+var dark = preload("res://scenes/dark.tscn")
 var low_nemy = preload("res://scenes/low_nemy.tscn")
 
 const SCREEN_WIDTH = 320
@@ -38,7 +40,25 @@ func _on_spawn_timer_timeout():
 		
 		add_child(enemy_instance)
 	
+	
 func _on_player_score(points, enemy_id):
 	score += points
 	get_node("ui/score").text = "Score: " + str(score)
 	print("Enemy defeated with ID:", enemy_id, " +", points, "points")
+	_runScorePhase(score)
+	
+func _runScorePhase(score):
+	if events <= 0:
+		if score > 20 && score < 100:
+			# Creating a Field Of Darks
+			var lastPosition
+			for d in [1,2,3,4,5,6,7,8,9,10,11,12]:
+				var dark_instance = dark.instantiate()
+				var position = randf_range(SCREEN_WIDTH + 8,2 * SCREEN_WIDTH)
+				events += 1
+				dark_instance.position = Vector2(position, randf_range(0,SCREEN_HEIGHT))
+				dark_instance.connect("score", Callable(self, "_on_player_score"))
+				
+				add_child(dark_instance)
+			
+			print("Reched Score",score)

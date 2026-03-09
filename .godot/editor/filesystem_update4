@@ -1,1 +1,7 @@
 res://default_env.tres
+res://scenes/dark.tscn
+res://scripts/dark.gd
+res://scripts/lowney.gd
+res://scripts/stage.gd
+res://scenes/stage.tscn
+res://scenes/asteroid.tscn

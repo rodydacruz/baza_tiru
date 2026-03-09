@@ -24,7 +24,6 @@ func shoot():
 	print("Bullet spawned at: ", bullet_instance.global_position)
 	bullet_instance.DIRECTION = Vector2.LEFT
 	get_parent().add_child(bullet_instance)
-
 	
 	
 

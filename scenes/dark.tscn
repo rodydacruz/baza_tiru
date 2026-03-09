@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bbf8ioqg8kqhj"]
+
+[ext_resource type="Script" uid="uid://c2pfmaf8ru3n2" path="res://scripts/dark.gd" id="1_8w4s7"]
+[ext_resource type="Texture2D" uid="uid://d1du3jk2lntmc" path="res://sprites/dark1.png" id="1_ey04d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8w4s7"]
+
+[node name="Dark" type="Area2D" unique_id=1174991590]
+script = ExtResource("1_8w4s7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=483096461]
+shape = SubResource("RectangleShape2D_8w4s7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1259835976]
+texture = ExtResource("1_ey04d")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
