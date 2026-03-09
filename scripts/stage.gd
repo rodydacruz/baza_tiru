@@ -49,7 +49,7 @@ func _on_player_score(points, enemy_id):
 	
 func _runScorePhase(score):
 	if events <= 0:
-		if score > 20 && score < 100:
+		if 20 < score < 100:
 			# Creating a Field Of Darks
 			var lastPosition
 			for d in [1,2,3,4,5,6,7,8,9,10,11,12]:
@@ -60,5 +60,6 @@ func _runScorePhase(score):
 				dark_instance.connect("score", Callable(self, "_on_player_score"))
 				
 				add_child(dark_instance)
-			
+		if 100 < score < 200:
+			# Lunch BossNemy01 
 			print("Reched Score",score)

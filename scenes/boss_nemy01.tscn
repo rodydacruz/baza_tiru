@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cnxj4a537al8q"]
+
+[ext_resource type="Script" uid="uid://ckmxaxg7kytpu" path="res://scripts/boss_nemy_01.gd" id="1_x8od6"]
+[ext_resource type="Texture2D" uid="uid://cji0eymyi4so6" path="res://sprites/boss_nemy_01.png" id="2_u01u5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n1i81"]
+radius = 36.0
+
+[node name="BossNemy01" type="Area2D" unique_id=1407470284]
+script = ExtResource("1_x8od6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1835730609]
+texture = ExtResource("2_u01u5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=805648989]
+shape = SubResource("CircleShape2D_n1i81")
