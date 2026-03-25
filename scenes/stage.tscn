@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://c3sqbp0fxkbkw" path="res://scripts/stage.gd" id="4"]
 [ext_resource type="PackedScene" uid="uid://c1lxm0e1b1t61" path="res://scenes/asteroid.tscn" id="5"]
 [ext_resource type="Script" uid="uid://bcn57ok6jfwpe" path="res://scripts/background.gd" id="6"]
+[ext_resource type="Script" uid="uid://cmfs45d3j3yis" path="res://scripts/titles.gd" id="7_st0q7"]
 
 [sub_resource type="FontFile" id="1"]
 fallbacks = Array[Font]([ExtResource("3")])
@@ -67,4 +68,11 @@ uppercase = true
 [node name="asteroid" parent="." unique_id=1492032663 instance=ExtResource("5")]
 position = Vector2(304.795, 29.928)
 
+[node name="titles" type="CanvasLayer" parent="." unique_id=1051680219]
+script = ExtResource("7_st0q7")
+
+[node name="title_timer" type="Timer" parent="titles" unique_id=817231717]
+autostart = true
+
 [connection signal="timeout" from="spawn_timer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="titles/title_timer" to="titles" method="_on_title_timer_timeout"]
