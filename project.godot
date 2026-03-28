@@ -31,6 +31,10 @@ window/stretch/mode="viewport"
 
 project/assembly_name="Basa Tiru"
 
+[editor]
+
+version_control/autoload_on_startup=true
+
 [importer_defaults]
 
 texture={

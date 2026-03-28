@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgf84bpr4g26i"]
+[gd_scene format=3 uid="uid://dgf84bpr4g26i"]
 
 [ext_resource type="Texture2D" uid="uid://cnti771fxns53" path="res://sprites/shot1.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://c51sqchhif620" path="res://sprites/shot2.png" id="2"]
@@ -21,13 +21,13 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="shot" type="Area2D" groups=["shot"]]
+[node name="shot" type="Area2D" unique_id=1585349439 groups=["shot"]]
 script = ExtResource("3")
 
-[node name="damage_zone" type="CollisionShape2D" parent="."]
+[node name="damage_zone" type="CollisionShape2D" parent="." unique_id=956398555]
 shape = SubResource("1")
 
-[node name="sprite" type="AnimatedSprite2D" parent="."]
+[node name="sprite" type="AnimatedSprite2D" parent="." unique_id=171326185]
 sprite_frames = SubResource("2")
 
 [connection signal="area_entered" from="." to="." method="_on_shot_area_entered"]
