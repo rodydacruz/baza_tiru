@@ -11,9 +11,11 @@ enum Phase {
 	
 }
 var current_phase = Phase.APEAR
-var speed = 30
+var speed = 60
 var health = 1000
 var explosion_scene = preload("res://scenes/explosion.tscn")
+
+
 
 
 func _process(delta):
@@ -23,30 +25,39 @@ func _process(delta):
 	
 
 
-func _on_shot_timer_timeout() -> void:
-	shoot()
+func _on_atack_timer_timeout() -> void:
+	shootCanonBall()
 	
 func movementByFase(delta,fase):
-	match fase:
-		Phase.APEAR:
-			#Vector2(SCREEN_WIDTH + 8, randf_range(0,SCREEN_HEIGHT))
-			if(position.x > Settings.BOST_ATACK_POSITION):
-				position.x = position.x - (delta * speed)
-			var player_position = get_parent().getPlayerPosition() 
-			position.y = position.y + ((1 if position.y < player_position.y else -1) *  (delta * speed)) 
-			pass
-		_:
-			pass
-	
-func shoot():
-	
-	var Bullet = preload("res://scenes/shot.tscn")
-	var bullet_instance  = Bullet.instantiate()
-	bullet_instance.global_position = Vector2(position.x - 20,position.y)
-	bullet_instance.global_rotation = 90
-	print("Bullet spawned at: ", bullet_instance.global_position)
-	bullet_instance.DIRECTION = Vector2.LEFT
-	get_parent().add_child(bullet_instance)
+	var stage = get_parent()
+	if(!stage.is_game_over):
+		match fase:
+			Phase.APEAR:
+				#Vector2(SCREEN_WIDTH + 8, randf_range(0,SCREEN_HEIGHT))
+				if(position.x > Settings.BOST_ATACK_POSITION):
+					position.x = position.x - (delta * speed)
+				
+				
+				var player_position = stage.getPlayerPosition()
+				var diff =  position.y - player_position.y
+				position.y = position.y + ((1 if diff < 0 else -1) *  (delta * speed )) 
+				pass
+			_:
+				pass
+func atackOntimerByFase():
+	pass
+func shootCanonBall():
+	var stage = get_parent()
+	if(!stage.is_game_over):
+		var CannonBall = preload("res://scenes/canon_ball.tscn")
+		var canon_ball_instance  = CannonBall.instantiate()
+		canon_ball_instance.global_position = Vector2(position.x - 20,position.y)
+
+		# Get Payler Possition and Vector Pointed to it
+		var player_possition = stage.getPlayerPosition()
+		
+		canon_ball_instance.vector = Vector2((player_possition - position)) 
+		get_parent().add_child(canon_ball_instance)
 	
 	
 func startHitAnimation():

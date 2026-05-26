@@ -65,10 +65,15 @@ func _process(delta):
 
 func _on_reload_timer_timeout():
 	can_shot = true
-
+	
+func _getLineToVector(vector2):
+	
+	pass
+func _getAngleToVector(vector2):
+	pass
 
 func _on_player_area_entered(area):
-	if area.is_in_group("asteroid") or area.is_in_group("shot"):
+	if area.is_in_group("asteroid",) or area.is_in_group("shot") or area.is_in_group("canon_ball"):
 		var stage_node = get_parent()
 		
 		var explosion_instance = explosion_scene.instantiate()

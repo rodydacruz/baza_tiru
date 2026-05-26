@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bms1h3dnm0qog"]
+[gd_scene format=3 uid="uid://bms1h3dnm0qog"]
 
 [ext_resource type="Texture2D" uid="uid://e8w1opeft7uv" path="res://sprites/player1.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://dptqpg2wdjhin" path="res://sprites/player2.png" id="2"]
@@ -21,18 +21,18 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="player" type="Area2D" groups=["player"]]
+[node name="player" type="Area2D" unique_id=1016212766 groups=["player"]]
 script = ExtResource("3")
 
-[node name="hit_zone" type="CollisionShape2D" parent="."]
+[node name="hit_zone" type="CollisionShape2D" parent="." unique_id=650052231]
 visible = false
 shape = SubResource("1")
 
-[node name="sprite" type="AnimatedSprite2D" parent="."]
+[node name="sprite" type="AnimatedSprite2D" parent="." unique_id=1426633996]
 sprite_frames = SubResource("2")
 frame = 1
 
-[node name="reload_timer" type="Timer" parent="."]
+[node name="reload_timer" type="Timer" parent="." unique_id=124294830]
 wait_time = 0.2
 
 [connection signal="area_entered" from="." to="." method="_on_player_area_entered"]

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://sqdyrelkrkax"]
+
+[ext_resource type="Script" uid="uid://2e2au13lnnq0" path="res://scripts/tiro.gd" id="1_3yigh"]
+[ext_resource type="Texture2D" uid="uid://crksq5n76kxi4" path="res://sprites/explosion.png" id="2_3yigh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ybok"]
+size = Vector2(16, 8)
+
+[node name="CanonBall" type="Area2D" unique_id=2055906643 groups=["canon_ball"]]
+script = ExtResource("1_3yigh")
+
+[node name="ball" type="Sprite2D" parent="." unique_id=406242633]
+texture = ExtResource("2_3yigh")
+
+[node name="damage_zone" type="CollisionShape2D" parent="." unique_id=272164591]
+shape = SubResource("RectangleShape2D_8ybok")
