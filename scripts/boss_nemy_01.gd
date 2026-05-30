@@ -3,16 +3,11 @@ extends Node2D
 signal score(points, enemy_id)
 signal alert(position, enemy_id)
 var enemy_id : int = randi() 
-enum Phase {
-	APEAR,
-	HIDE,
-	AlL_IN,
-	DEFEATED
-	
-}
-var current_phase = Phase.APEAR
+
+var current_phase = Settings.Phase.APEAR
 var speed = 60
-var health = 1000
+var totalHealth = 1000.0
+var health = totalHealth
 var explosion_scene = preload("res://scenes/explosion.tscn")
 
 
@@ -20,21 +15,22 @@ var explosion_scene = preload("res://scenes/explosion.tscn")
 
 func _process(delta):
 	if(get_parent().is_game_over != true):
-		movementByFase(delta,current_phase)
+		movementByFase(delta)
 	pass
 	
 
 
 func _on_atack_timer_timeout() -> void:
-	shootCanonBall()
+	atackOntimerByFase()
 	
-func movementByFase(delta,fase):
+	
+func movementByFase(delta):
 	var stage = get_parent()
 	if(!stage.is_game_over):
-		match fase:
-			Phase.APEAR:
+		match current_phase:
+			Settings.Phase.APEAR:
 				#Vector2(SCREEN_WIDTH + 8, randf_range(0,SCREEN_HEIGHT))
-				if(position.x > Settings.BOST_ATACK_POSITION):
+				if(position.x > Settings.BOSS_ATACK_POSITION):
 					position.x = position.x - (delta * speed)
 				
 				
@@ -42,10 +38,23 @@ func movementByFase(delta,fase):
 				var diff =  position.y - player_position.y
 				position.y = position.y + ((1 if diff < 0 else -1) *  (delta * speed )) 
 				pass
+			Settings.Phase.HIDE:
+				if(position.x > Settings.BOSS_LEFT_HIDE_POSITION):
+					position.x = position.x - (delta * speed * 5 )
+				
 			_:
 				pass
 func atackOntimerByFase():
-	pass
+	var stage = get_parent()
+	if(!stage.is_game_over):
+		match current_phase:
+			Settings.Phase.APEAR:
+				shootCanonBall()
+			Settings.Phase.HIDE:
+				shootCanonBall()
+				pass
+			_:
+				pass
 func shootCanonBall():
 	var stage = get_parent()
 	if(!stage.is_game_over):
@@ -58,9 +67,21 @@ func shootCanonBall():
 		
 		canon_ball_instance.vector = Vector2((player_possition - position)) 
 		get_parent().add_child(canon_ball_instance)
+		if current_phase == Settings.Phase.HIDE:
+			var TWarning = preload("res://scenes/t_warning.tscn")
+			var t_warning_instance  = TWarning.instantiate()
+			t_warning_instance.threat  = canon_ball_instance;
+			t_warning_instance.global_position.y = canon_ball_instance.global_position.y
+			get_parent().add_child(t_warning_instance)
 	
-	
+func _draw_health() -> void:
+	var health_bar  = get_node("health_bar") as ProgressBar
+	var per = (health/totalHealth)*100
+	print("Perce", per)
+	health_bar.set_value_no_signal(per)
+	pass
 func startHitAnimation():
+	position.x += 2; 
 	pass
 
 func sprintOffScreen():
@@ -80,9 +101,14 @@ func _on_area_entered(area: Area2D) -> void:
 			emit_signal("score", 10, enemy_id)
 			health -= 10
 			startHitAnimation()
-			expload(area.position)
-		
+			expload(area.position) 
+			if(health == totalHealth*0.7 ):
+				current_phase = Settings.Phase.HIDE;
+			
+			_draw_health()
 		else:
 			expload(area.position)
-			#queue_free()
+			queue_free()
+	elif area.is_in_group("player"):
+		expload(area.position) 
 			

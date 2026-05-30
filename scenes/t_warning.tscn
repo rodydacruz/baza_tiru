@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b41b2us6i8qxa"]
+
+[ext_resource type="Script" uid="uid://b5pcff0diyxo5" path="res://scenes/t_warning.gd" id="1_vdarw"]
+
+[node name="TWarning" type="Control" unique_id=1064050464]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vdarw")
+
+[node name="arrow" type="Sprite2D" parent="." unique_id=1795644413]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=727047541]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -13.0
+offset_right = 6.0
+offset_bottom = 20.0
+color = Color(1, 0.14901961, 1, 1)

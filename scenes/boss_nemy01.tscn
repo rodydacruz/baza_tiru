@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_n1i81"]
 radius = 36.0
 
-[node name="BossNemy01" type="Area2D" unique_id=1407470284]
+[node name="BossNemy01" type="Area2D" unique_id=1407470284 groups=["boss"]]
 script = ExtResource("1_x8od6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1835730609]
@@ -18,6 +18,16 @@ shape = SubResource("CircleShape2D_n1i81")
 [node name="atack_timer" type="Timer" parent="." unique_id=1015016249]
 wait_time = 0.5
 autostart = true
+
+[node name="health_bar" type="ProgressBar" parent="." unique_id=407619274]
+offset_left = 46.0
+offset_top = 24.0
+offset_right = 98.0
+offset_bottom = 29.0
+rotation = -1.5707964
+theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
+value = 100.0
+show_percentage = false
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="timeout" from="atack_timer" to="." method="_on_atack_timer_timeout"]

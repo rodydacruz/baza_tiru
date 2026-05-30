@@ -73,7 +73,7 @@ func _getAngleToVector(vector2):
 	pass
 
 func _on_player_area_entered(area):
-	if area.is_in_group("asteroid",) or area.is_in_group("shot") or area.is_in_group("canon_ball"):
+	if area.is_in_group("asteroid",) or area.is_in_group("shot") or area.is_in_group("canon_ball") or area.is_in_group("boss"):
 		var stage_node = get_parent()
 		
 		var explosion_instance = explosion_scene.instantiate()

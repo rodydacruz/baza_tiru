@@ -32,6 +32,7 @@ script = ExtResource("4")
 autostart = true
 
 [node name="background" type="Sprite2D" parent="." unique_id=277022543]
+position = Vector2(0, -2)
 texture = ExtResource("2")
 centered = false
 script = ExtResource("6")

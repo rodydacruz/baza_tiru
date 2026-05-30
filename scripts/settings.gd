@@ -7,4 +7,14 @@ const SCREEN_HEIGHT = 180
 
 
 #Enemy Positions
-const BOST_ATACK_POSITION = SCREEN_WIDTH - 60
+const BOSS_ATACK_POSITION = SCREEN_WIDTH - 60
+const BOSS_LEFT_HIDE_POSITION = -SCREEN_WIDTH
+
+
+#Boss Faze
+enum Phase {
+	APEAR,
+	HIDE,
+	AlL_IN,
+	DEFEATED
+}
