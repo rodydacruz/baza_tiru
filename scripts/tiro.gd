@@ -8,7 +8,7 @@ var phase;
 
 func _process(delta):
 	position += vector  * delta
-	if (position.x < -8 or position.x > SCREEN_WIDTH + 8) && phase != Settings.Phase.HIDE:   
+	if ((position.x < -8 && phase != Settings.Phase.HIDE) or position.x > SCREEN_WIDTH + 8) :   
 		queue_free()
 
 

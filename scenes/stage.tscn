@@ -43,10 +43,10 @@ position = Vector2(49.0815, 88.2523)
 [node name="ui" type="CanvasLayer" parent="." unique_id=1399725597]
 
 [node name="score" type="Label" parent="ui" unique_id=1860089379]
-offset_left = 19.3246
-offset_top = 6.24334
-offset_right = 59.3246
-offset_bottom = 20.2433
+offset_left = 113.0
+offset_top = 6.0
+offset_right = 153.0
+offset_bottom = 19.99996
 theme_override_colors/font_color = Color(0.435294, 1, 0.733333, 1)
 theme_override_colors/font_shadow_color = Color(0.184314, 0.121569, 0.278431, 1)
 theme_override_fonts/font = SubResource("1")

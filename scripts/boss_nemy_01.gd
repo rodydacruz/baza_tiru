@@ -6,6 +6,7 @@ var enemy_id : int = randi()
 
 var current_phase = Settings.Phase.APEAR
 var speed = 60
+var strike_count = 0;
 var totalHealth = 1000.0
 var health = totalHealth
 var explosion_scene = preload("res://scenes/explosion.tscn")
@@ -41,6 +42,14 @@ func movementByFase(delta):
 			Settings.Phase.HIDE:
 				if(position.x > Settings.BOSS_LEFT_HIDE_POSITION):
 					position.x = position.x - (delta * speed * 5 )
+				if(strike_count >= 10):
+					current_phase = Settings.Phase.AlL_IN
+					
+					
+			Settings.Phase.AlL_IN: 
+				if(position.x < Settings.BOSS_LEFF_ATACK_POSITION):
+					position.x = position.x + (delta * speed * 5 )
+					rotation_degrees = 180
 				
 			_:
 				pass
@@ -61,13 +70,16 @@ func shootCanonBall():
 		var CannonBall = preload("res://scenes/canon_ball.tscn")
 		var canon_ball_instance  = CannonBall.instantiate()
 		canon_ball_instance.global_position = Vector2(position.x - 20,position.y)
-
+		
 		# Get Payler Possition and Vector Pointed to it
 		var player_possition = stage.getPlayerPosition()
 		
 		canon_ball_instance.vector = Vector2((player_possition - position)) 
+		
 		get_parent().add_child(canon_ball_instance)
 		if current_phase == Settings.Phase.HIDE:
+			strike_count += 1;
+			canon_ball_instance.phase = Settings.Phase.HIDE
 			var TWarning = preload("res://scenes/t_warning.tscn")
 			var t_warning_instance  = TWarning.instantiate()
 			t_warning_instance.threat  = canon_ball_instance;

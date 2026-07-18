@@ -79,6 +79,6 @@ func _on_player_area_entered(area):
 		var explosion_instance = explosion_scene.instantiate()
 		explosion_instance.position = position
 		stage_node.add_child(explosion_instance)
-		emit_signal("destroyed")
-		queue_free()
+		#emit_signal("destroyed")
+		#queue_free()
 		

@@ -8,7 +8,7 @@ var low_nemy = preload("res://scenes/low_nemy.tscn")
 var boss_nemy01 = preload("res://scenes/boss_nemy01.tscn")
 
 
-var score = 100
+var score = 0
 
 func _ready():
 	get_node("player").connect("destroyed", Callable(self, "_on_player_destroyed"))
