@@ -1,3 +1,17 @@
 .godot
 *~
 *.tmp
+
+# Unreal: generated output, never committed (Intermediate and .vs alone are ~4.7 GB)
+BazaTiru/Binaries/
+BazaTiru/Build/
+BazaTiru/DerivedDataCache/
+BazaTiru/Intermediate/
+BazaTiru/Saved/
+BazaTiru/.vs/
+BazaTiru/*.sln
+BazaTiru/*.slnx
+BazaTiru/*.VC.db
+BazaTiru/*.opensdf
+BazaTiru/*.sdf
+BazaTiru/*.suo
